@@ -17,7 +17,9 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#CSRF_COOKIE_SECURE=True
+
+ALLOWED_HOSTS = ['programmingliteracy.herokuapp.com']
 
 # Application definition
 
@@ -123,6 +125,7 @@ USE_TZ = True
 # telling django to look for the static files in a directory called "static"
 #AWS_LOCATION = 'static'
 #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'), ]
 
