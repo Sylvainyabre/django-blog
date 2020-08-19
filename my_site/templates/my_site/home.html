@@ -1,0 +1,81 @@
+{% extends 'my_site/base.html' %}
+
+{% block title%} Programming Literacy {%endblock title%}
+
+{% block content %}
+<h1 class="site_brand">Programming Literacy</h1>
+<h3 class="text-muted site_slogan"><i>Apprendre ensemble la programmation informatique</i></h3>
+<div class="row"  id="all_posts">
+
+     {% load my_site_tags %}
+{% block sidebar %}
+         <div class="column">
+
+            <div  id="sidebar">
+            <div class="site_name"><h3 >Programming Literacy</h3></div>
+             <hr>
+             <h5 class="text-muted"> {% total_articles %} Articles.</h5>
+             <p><a href="{% url 'articles_feed' %}">Souscrire au fil des articles.</a></p>
+            <h4>Les Plus Récents</h4>
+            <p>{% show_latest_articles 5%}</p>
+
+            <h4>Les Plus Commentés</h4>
+            {% get_most_commented_articles as most_commented_articles %}
+            <ul>
+                {% for article in most_commented_articles %}
+                <li>
+                    <a href="{{article.get_absolute_url}}">{{article.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            </div>
+         </div>
+
+<div class="article">
+  {% for article in articles  %}
+         <div class="column unit-article">
+           <div class="col md-4">
+               <div class="card ">
+            {% if article.illustration%}
+               <img class="card-img-top" src="{{article.illustration.url}}" alt="Illustration" >
+            {% endif%}
+             <div class="card-body">
+               <small class="text-muted">
+               <img class="rounded-circle article-img" src="{{article.author.profile.image.url}}">
+             <i><a href="{% url 'about' %}">{{article.author}}</a>|{{article.pub_date}}</i></small>
+             <h2 class="card-title">{{article.title}}</h2>
+             <p class="card-text description">{{article.description}}</p>
+            <a href="{{ article.get_absolute_url }}" class="btn btn-primary">Lire cet article</a>
+    </div>
+        </div>
+           </div>
+         </div>
+
+{% endfor %}
+</div>
+
+{% endblock sidebar %}
+
+
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_object.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_object.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_object.number }} of {{ page_object.paginator.num_pages }}.
+        </span>
+
+        {% if page_object.has_next %}
+            <a href="?page={{ page_object.next_page_number }}">next</a>
+            <a href="?page={{ page_object.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+
+    </span>
+</div>
+{% endblock content%}
+</div>

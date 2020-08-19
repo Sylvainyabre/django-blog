@@ -1,0 +1,27 @@
+{% extends 'my_site/base.html' %}
+
+{% block content %}
+
+    {% if query %}
+<h1>Search for posts</h1>
+<hr>
+<h4>Articles containing <i>{{query}}.</i></h4>
+      {% with results.count as total_results %}
+        <h4>Found {{total_results}} result{{total_results|pluralize}}</h4>
+      {% endwith %}
+
+       {% for article in results %}
+          <h1><a href="{{article.get_absolute_url}}">{{article.title}}</a> </h1>
+          <p>{{article.content|truncatewords:10|safe}}</p>
+       {% endfor %}
+      {% else %}
+           <form class="search_field" action="." method="GET">
+                 {% csrf_token %}
+                 {{search_form.as_p}}
+                 <input class="search" type="submit" value="search">
+            </form>
+
+
+     {% endif %}
+
+   {% endblock %}

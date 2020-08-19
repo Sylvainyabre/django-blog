@@ -1,0 +1,36 @@
+{% extends 'my_site/base.html' %}
+
+
+{% block title %}
+New user registration
+{% endblock title %}
+
+{% block content%}
+<div class="content-section" >
+    {% load crispy_forms_tags %}
+    <form class="register-form" action="." method="POST" enctype="multipart/form-data">
+
+           <fieldset class="for-group">
+               <legend class="border-bottom mb-4">Commencer à programmer aujourd'hui !</legend>
+               <legend class="border-bottom mb-4">Info de Profile</legend>
+               {% csrf_token %}
+               {{ user_form | crispy }}
+               {{prof_update_form|crispy}}
+
+
+           </fieldset>
+
+
+
+      <input type="submit" value="Créer votre compte">
+        <hr>
+         <small class="text-muter">
+            Vous Possedez déjà un compte ?
+           <a href="{% url 'login' %}">Se connecter</a>
+        </small>
+    </form>
+
+
+
+</div>
+{% endblock %}

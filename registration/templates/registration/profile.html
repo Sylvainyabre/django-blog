@@ -1,0 +1,30 @@
+{% extends 'my_site/base.html' %}
+
+{% block title %}
+{{user.first_name}}'s profile
+{% endblock title %}
+
+
+{% block content %}
+<hr>
+<img class="rounded-circle account-img" src="{{ user.profile.image.url }}" width="155" height="150">
+<hr>
+
+
+<div class="profile">
+   <div class="media">
+      <div class="media-body">
+         <h3 class="account-heading">Username: {{user.first_name}}</h3>
+         <h3 class="text-secondary">First name: {{user.last_name}}</h3>
+         <h3>Gender: {{user.profile.gender}}</h3>
+         <h3>Profession: {{user..profile.profession}}</h3>
+         <h3>My interest(s): {{user.profile.interest}}</h3>
+         <h3>Short bio:</h3> <h5 class="user-bio">{{user.profile.biography}}</h5>
+      </div>
+   </div>
+
+</div>
+
+
+
+{% endblock  %}

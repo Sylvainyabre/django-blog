@@ -1,0 +1,28 @@
+{% extends 'my_site/base.html' %}
+
+
+{% block title %}
+   Add new article
+{% endblock title %}
+
+
+{% block content%}
+<div class="content-section" >
+
+
+ <h1>Happy writing!</h1>
+    {% load crispy_forms_tags %}
+    {% load static %}
+
+    <form action="" method="POST" >
+
+             {% csrf_token %}
+             {{article_form.media}}
+             {{article_form|crispy}}
+
+  <br>
+      <input type="submit" value="Post">
+    </form>
+
+</div>
+{% endblock %}

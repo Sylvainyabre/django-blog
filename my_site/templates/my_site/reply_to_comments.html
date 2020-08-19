@@ -1,0 +1,25 @@
+{% extends 'my_site/base.html' %}
+
+{% block content %}
+    {% if new_reply %}
+     <div class="alert alert-success" role="alert">
+            <p>replied added</p>
+          <a href="{{article.get_absolute_url}}">Back to article</a>
+    </div>
+
+     {% else %}
+<div class="reply_form">
+
+    <h2 style="margin-top:25px;">Reply to  {{comment.name}} on <i>{{article.title}}.</i></h2>
+            <p>Please, keep comments respectful.</p>
+               {% load crispy_forms_tags %}
+                 <form action="." method="POST" class="comment_reply">
+                     {% csrf_token %}
+                     {{ reply_form | crispy }}
+                     {{ reply_form.media }}
+                     <p><input type="submit" value="Reply"></p>
+                 </form>
+</div>
+
+     {% endif %}
+{% endblock %}

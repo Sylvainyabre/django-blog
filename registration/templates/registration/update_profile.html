@@ -1,0 +1,21 @@
+{% extends 'my_site/base.html' %}
+
+{% block title %}
+{{user.username}}'s profile
+{% endblock title %}
+
+{% block content%}
+{% if request.user == user %}
+{% load crispy_forms_tags %}
+<form class= "profile_update" action="{% url 'profile_update' %}" method="POST" enctype="multipart/form-data">
+
+           <fieldset class="form-group">
+               <legend class="border-bottom mb-4">Profile Info</legend>
+               {% csrf_token %}
+               <!--{{ user_update_form | crispy }}-->
+               {{prof_update_form|crispy}}
+           </fieldset>
+    <p><input type="submit" value="update"></p>
+</form>
+{% endif %}
+{% endblock %}

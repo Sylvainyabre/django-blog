@@ -1,0 +1,25 @@
+{% extends 'my_site/base.html' %}
+
+{% block content %}
+     {% if new_comment %}
+
+        <div class="alert alert-success" role="alert" id="comment_feedback">
+            <h3>
+                Thank you for commenting! Comments are moderated by the admin
+            </h3>
+             <a href="{{article.get_absolute_url}}"><h2>Back to article</h2></a>
+        </div>
+     {% else %}
+       <h1>New comment</h1>
+        <p>Please, keep comments respectful.</p>
+         {% load crispy_forms_tags %}
+           <form action="." method="POST" class="comment_card">
+                   {% csrf_token %}
+                 {{comment_form.media}}
+                 {{ comment_form| crispy }}
+               <p><input type="submit" value="Add comment"></p>
+           </form>
+    {% endif %}
+
+
+{% endblock %}

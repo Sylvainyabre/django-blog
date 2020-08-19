@@ -1,0 +1,73 @@
+{% extends 'my_site/base.html' %}
+
+
+{% block title%} {{article.title}} {% endblock %}
+
+{% block content%}
+
+       <div class="post">
+           <h1><span class="display_title">{{article.title}}</span></h1>
+           <hr class="title_divider">
+           <div class="signature">
+               <h6 class="text-muted"><i>Published on {{article.pub_date}} by {{article.author}}</i></h6>
+                 </div>
+                    <hr>
+                       <p>{{article.content|safe}}</p>
+
+
+
+                              {% with article.comments.count as total_comments %}
+                                 <h3> {{total_comments}} Comment {{total_comments|pluralize}}</h3>
+                              {% endwith %}
+                              <hr>
+                           <h3><a href="{% url 'add_comment' article.pk %}">Ajouter un commentaire</a></h3>
+
+
+
+                       {% if article.comments.count > 0  %}
+                      <a href="#comments" class="btn btn-info" data-toggle="collapse"  style="margin-bottom:25px;">
+                          Lire les commentaires</a>
+                         {% for comment in article.comments.all %}
+                  <div class="container" id="comment">
+                      <div id="comments" class="collapse">
+                   <ul class="comment_li">
+                       <li >
+                          <article>
+                              {% load avatar_tags %}
+                              <img class="rounded-circle article-img" src="{{article.author.profile.image.url}}">
+                              <strong  style="color:#009933;"><a  href=" {% url 'profile' %}">{{comment.author.first_name}}</a></strong>
+                              <small class="text-muted" style="color:#009933;">on {{comment.created}}</small>
+
+                              <p class="muted-text">{{comment.body|safe}}</p>
+
+
+                               {% if comment.replies.count > 0 %}
+                                          {% for reply in comment.replies.all %}
+                                           <ul class="reply_li">
+                                               <li >
+                                                 <div class="reply_area">
+                                                    <img class="rounded-circle article-img" src="{{article.author.profile.image.url}}">
+                                                     <strong class="text-muted" style="color:purple;" ><a href=" {% url 'profile' %}">{{reply.author.first_name|safe}}</a></strong>
+                                                    <small class="text-muted">{{reply.created}}</small>
+                                                     <p class="muted-text">{{reply.body|safe}}</p>
+
+                                                 </div>
+                                               </li>
+
+                                            </ul>
+
+                                   {% endfor %}
+                                  {% endif %}
+                                 </article>
+                             </li>
+                         </ul>
+                          <a href="{% url 'add_reply' comment.pk %}"><h3>Répondre</h3></a>
+                   </div>
+                  </div>
+                    {% endfor %}
+                {% endif %}
+       </div>
+
+
+{% endblock %}
+
