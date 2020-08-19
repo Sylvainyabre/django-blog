@@ -15,7 +15,7 @@ DEBUG = True
 
 #CSRF_COOKIE_SECURE=True
 
-ALLOWED_HOSTS = ['programmingliteracy.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','programmingliteracy.herokuapp.com']
 
 # Application definition
 
