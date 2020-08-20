@@ -20,7 +20,7 @@ def show_latest_articles(count=5):
 
 @register.simple_tag
 def python_articles():
-    return Article.objects.filter( status='published').order_by('-pub_date')
+    return Article.objects.filter( status='published', content_category='python').order_by('-pub_date')
 
 
 @register.simple_tag

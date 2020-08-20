@@ -14,7 +14,7 @@ def homepage(request):
     template_name = 'my_site/home.html'
     articles = Article.objects.filter(status='published')
     page = request.GET.get('page', 1)
-    paginator = Paginator(articles, 8)  # show 5 articles at once on a page
+    paginator = Paginator(articles, 6)  # show 5 articles at once on a page
 
     page_number = request.GET.get(page)
     page_object = paginator.get_page(page_number)
