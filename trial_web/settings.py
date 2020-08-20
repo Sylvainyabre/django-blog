@@ -124,7 +124,7 @@ USE_TZ = True
 #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'my_site/static/'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 # uploaded media goes here
 MEDIA_URL = '/media/'
@@ -176,9 +176,5 @@ CKEDITOR_CONFIGS = {
     },
 
 }
-# Heroku settings
-cwd = os.getcwd()
-if cwd == '/app' or cwd[:4] == '/tmp':
-    import dj_database_url
 
 django_heroku.settings(locals())
