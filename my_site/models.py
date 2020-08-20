@@ -8,8 +8,7 @@ from django.conf import settings
 class Article(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
-        ('published', 'Published'),
-    )
+        ('published', 'Published'), )
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='blog_posts', on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
     pub_date = models.DateTimeField(default=timezone.now)
@@ -21,7 +20,7 @@ class Article(models.Model):
                                                                 ('javaScript', 'javaScript'),
                                                                 ('html', 'html'),
                                                                 ('css', 'css'),
-                                                                ('Unclassified', 'Unclassified')],default='Unclassified')
+                                                                ('Unclassified', 'Unclassified')], default='Unclassified')
     content = RichTextUploadingField()
     status = models.CharField(max_length=100,
                               choices=STATUS_CHOICES,

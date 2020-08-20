@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.db import models
-from PIL import Image
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
 from .managers import CustomUserManager
