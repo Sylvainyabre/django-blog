@@ -176,5 +176,9 @@ CKEDITOR_CONFIGS = {
     },
 
 }
+# Heroku settings
+cwd = os.getcwd()
+if cwd == '/app' or cwd[:4] == '/tmp':
+    import dj_database_url
 
 django_heroku.settings(locals())
