@@ -10,8 +10,8 @@
      {% else %}
 <div class="reply_form">
 
-    <h2 style="margin-top:25px;">Reply to  {{comment.name}} on <i>{{article.title}}.</i></h2>
-            <p>Please, keep comments respectful.</p>
+    <h2 style="margin-top:25px;">Répondre à  {{comment.author.first}} concernant <i>{{article.title}}.</i></h2>
+            <p>Bien vouloir maintenir les commentaires respectueux.</p>
                {% load crispy_forms_tags %}
                  <form action="." method="POST" class="comment_reply">
                      {% csrf_token %}
