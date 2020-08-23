@@ -154,12 +154,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # uploaded media goes here
-MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/'
 # MEDIA_ROOT = MEDIA_URL
-# MEDIA_LOCATION = 'media'
+MEDIA_LOCATION = 'media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_OBJECT_PARAMETERS = {
