@@ -11,7 +11,7 @@ class Article(models.Model):
         ('published', 'Published'), )
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='blog_posts', on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
-    pub_date = models.DateTimeField(default=timezone.now)
+    pub_date = models.DateTimeField(auto_now_add=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     illustration = models.ImageField(blank=True, null=True, default='article.png', upload_to='media/')
@@ -19,8 +19,7 @@ class Article(models.Model):
     content_category = models.CharField(max_length=25, choices=[('python', 'python'),
                                                                 ('javaScript', 'javaScript'),
                                                                 ('html', 'html'),
-                                                                ('css', 'css'),
-                                                                ('Unclassified', 'Unclassified')], default='Unclassified')
+                                                                ('css', 'css'),], default='Unclassified')
     content = RichTextUploadingField()
     status = models.CharField(max_length=100,
                               choices=STATUS_CHOICES,
