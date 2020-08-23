@@ -1,0 +1,599 @@
+
+#top {
+  background-color:#009999;
+  overflow-y:hidden;
+  position:relative;
+  width:100%;
+  margin-top:0px;
+  padding:22px,0px;
+}
+
+/* Style the links inside the navigation bar */
+#top a {
+  float: left;
+  display: inline;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 30px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-lef:20px;
+}
+
+/* Change the color of links on hover */
+#top a:hover {
+  background-color: #ddd;
+  color: grey;
+  margin-top:0px;
+}
+#top input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 18px;
+  margin-right: 50px;
+  font-size: 17px;
+}
+.search_link{
+   display:inline-block;
+   float:right;
+   margin-top:1px;
+   margin-right:10px;
+}
+.search_field{
+    margin-top:50px;
+    padding:40px 55px;
+}
+div.footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:gray;
+   color:white;
+   text-align:center;
+   font-family:Roman;
+   padding:13px 0px;
+   margin-top:100px;
+}
+
+
+h1,h2,h3,h4{
+    font-family:average;
+}
+
+body{
+     overflow-y:scroll;
+     overflow-x:hidden;
+     margin: 0 auto ; /* the bottom margin is the negative value of the footer's height */
+}
+main.container-fluid{
+     overflow-y:hidden;
+     overflow-x:hidden;
+     margin-top:0px;
+     min-height:100%;
+     margin-bottom:100px;
+     float:left;
+     margin-left:25px;
+     width:100%;
+
+}
+
+.login-form{
+   margin-left:150px;
+   margin-right:150px;
+   float:center;
+}
+
+.register-form{
+   margin-left:150px;
+   margin-right:150px;
+   float:center;
+}
+
+#all_posts{
+    background-color:#eee;
+    padding:5px 5px;
+    margin-top:20px;
+    margin-bottom:10px;
+    display:block;
+
+}
+
+
+/*each article displayed on welcome page*/
+.unit-article{
+     width:500px;
+     height:700px;
+     display:auto;
+     margin-bottom:5px;
+     margin-top:10px;
+     margin-left:6px;
+
+
+}
+
+/*refers to articles details page-->*/
+div.post{
+    border:3px ridge;
+    margin-top:50px;
+    margin-bottom:300px;
+    margin-left:60px;
+    padding:1px 15px;
+    overflow-y:hidden;
+
+    font-size:22px;
+    width:90%;
+    float:center;
+}
+
+
+span.display_title{
+     border-radius:14px;
+     font-size:70px;
+     min-width:85%;
+     text-align:center;
+     align:center;
+     text-decoration:underline;
+     color:purple;
+}
+hr.title_divider{
+     color:grey;
+     padding:26px 26px;
+     border:5px;
+
+}
+
+hr.separate_comment{
+      padding:25px;
+      border:5px;
+      color:grey;
+}
+
+span.header_span{
+     margin-left:50px;
+     margin-right:50px;
+     padding:20px,0px;
+}
+
+div.email{
+     background-color:lightblue;
+     border:rounded;
+     margin-bottom:150px;
+     margin-top:30px;
+     margin-left:50px;
+     padding:25px 25px;
+     text-align:left;
+     min-width:85%;
+     font-family:average;
+}
+
+.comment_li{
+
+        list-style:none;
+        color:grey ;
+}
+.reply_li{
+       list-style:none;
+}
+
+div.comment_header{
+     font-size:30;
+     text-decoration:underline;
+     color:grey;
+     padding:25px;
+}
+
+div.reply_form{
+     margin-bottom:250px;
+     background-color:lightblue;
+     padding:10px,10px;
+}
+div.reply_area{
+     background-color:marine-blue;
+
+}
+
+div.content-section{
+
+     background-color:lightblue;
+     padding:20px 10px;
+     margin-top:25px;
+     margin-bottom:10px;
+}
+
+.profile{
+   border:2px grey solid;
+   padding:15px 10px;
+   margin-bottom:20px;
+   margin-right:25px;
+
+}
+
+.profile_update{
+    background-color:lightgrey;
+    padding:15px 10px;
+}
+.article-img {
+  width:70px;
+  height:70px;
+}
+.user-bio{
+  border: 2px green rounded;
+  color:skyblue;
+  margin-left:20px;
+}
+
+.article{
+    display:flex;
+    flex-wrap:wrap;
+
+}
+
+#sidebar{
+   float:right;
+   background-color:white;
+   margin-top:0px;
+   margin-right:15px !important;
+   margin-top:0px;
+   padding:10px 10px;
+   border: 2px skyblue solid;
+   width:27%;
+   display:block;
+
+
+
+}
+
+.pagination{
+
+    padding:10px 2px;
+    margin-top:25px;
+    text-indent:14px;
+}
+
+.about_page{
+  border: 5px purple ridge;
+  margin-top:25px;
+  margin-bottom:50px;
+
+
+}
+
+/*removed*/
+.illustration_image{
+    width:160px;
+    height:100
+    border-radius:2px;
+}
+
+.site_name{
+    font-size:15px;
+    color:purple;
+}
+
+/*Programming Literacy*/
+.site_brand{
+    color:skyblue;
+    font-size:80px;
+    margin-left:280px;
+    margin-right:50px;
+
+
+}
+
+.site_slogan{
+    margin-left:340px;
+    color:#fc03ec;
+    text-decoration:underline;
+
+}
+
+#sidebar:hover{
+   background-color:#33cccc;
+   color:
+
+}
+..description:hover{
+    background-color:#33cccc;
+    color:
+}
+#top {
+  background-color:#009999;
+  overflow-y:hidden;
+  position:relative;
+  width:100%;
+  margin-top:0px;
+  padding:22px,0px;
+}
+
+/* Style the links inside the navigation bar */
+#top a {
+  float: left;
+  display: inline;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 30px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-lef:20px;
+}
+
+/* Change the color of links on hover */
+#top a:hover {
+  background-color: #ddd;
+  color: grey;
+  margin-top:0px;
+}
+#top input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 18px;
+  margin-right: 50px;
+  font-size: 17px;
+}
+.search_link{
+   display:inline-block;
+   float:right;
+   margin-top:1px;
+   margin-right:10px;
+}
+.search_field{
+    margin-top:50px;
+    padding:40px 55px;
+}
+div.footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:gray;
+   color:white;
+   text-align:center;
+   font-family:Roman;
+   padding:13px 0px;
+   margin-top:100px;
+}
+
+
+h1,h2,h3,h4{
+    font-family:average;
+}
+
+body{
+     overflow-y:scroll;
+     overflow-x:hidden;
+     margin: 0 auto ; /* the bottom margin is the negative value of the footer's height */
+}
+main.container-fluid{
+     overflow-y:hidden;
+     overflow-x:hidden;
+     margin-top:0px;
+     min-height:100%;
+     margin-bottom:100px;
+     float:left;
+     margin-left:25px;
+     width:100%;
+
+}
+
+.login-form{
+   margin-left:150px;
+   margin-right:150px;
+   float:center;
+}
+
+.register-form{
+   margin-left:150px;
+   margin-right:150px;
+   float:center;
+}
+
+#all_posts{
+    background-color:#eee;
+    padding:5px 5px;
+    margin-top:20px;
+    margin-bottom:5px;
+    display:block;
+
+}
+
+
+/*each article displayed on welcome page*/
+.unit-article{
+     width:500px;
+     height:700px;
+     display:auto;
+     margin-bottom:5px;
+     margin-top:10px;
+     margin-left:6px;
+
+
+}
+
+/*refers to articles details page-->*/
+div.post{
+    border:3px ridge;
+    margin-top:50px;
+    margin-bottom:300px;
+    margin-left:60px;
+    padding:1px 15px;
+    overflow-y:hidden;
+
+    font-size:22px;
+    width:90%;
+    float:center;
+}
+
+
+span.display_title{
+     border-radius:14px;
+     font-size:70px;
+     min-width:85%;
+     text-align:center;
+     align:center;
+     text-decoration:underline;
+     color:purple;
+}
+hr.title_divider{
+     color:grey;
+     padding:26px 26px;
+     border:5px;
+
+}
+
+hr.separate_comment{
+      padding:25px;
+      border:5px;
+      color:grey;
+}
+
+span.header_span{
+     margin-left:50px;
+     margin-right:50px;
+     padding:20px,0px;
+}
+
+div.email{
+     background-color:lightblue;
+     border:rounded;
+     margin-bottom:150px;
+     margin-top:30px;
+     margin-left:50px;
+     padding:25px 25px;
+     text-align:left;
+     min-width:85%;
+     font-family:average;
+}
+
+.comment_li{
+
+        list-style:none;
+        color:grey ;
+}
+.reply_li{
+       list-style:none;
+}
+
+div.comment_header{
+     font-size:30;
+     text-decoration:underline;
+     color:grey;
+     padding:25px;
+}
+
+div.reply_form{
+     margin-bottom:250px;
+     background-color:lightblue;
+     padding:10px,10px;
+}
+div.reply_area{
+     background-color:marine-blue;
+
+}
+
+div.content-section{
+
+     background-color:lightblue;
+     padding:20px 10px;
+     margin-top:25px;
+     margin-bottom:10px;
+}
+
+.profile{
+   border:2px grey solid;
+   padding:15px 10px;
+   margin-bottom:20px;
+   margin-right:25px;
+
+}
+
+.profile_update{
+    background-color:lightgrey;
+    padding:15px 10px;
+}
+.article-img {
+  width:70px;
+  height:70px;
+}
+.user-bio{
+  border: 2px green rounded;
+  color:skyblue;
+  margin-left:20px;
+}
+
+.article{
+    display:flex;
+    flex-wrap:wrap;
+
+}
+
+#sidebar{
+   float:right;
+   background-color:white;
+   margin-top:0px;
+   margin-right:15px !important;
+   margin-top:0px;
+   padding:10px 10px;
+   border: 2px skyblue solid;
+   width:27%;
+   display:block;
+
+
+
+}
+
+.pagination{
+
+    padding:10px 2px;
+    margin-top:25px;
+    text-indent:14px;
+}
+
+.about_page{
+  border: 5px purple ridge;
+  margin-top:25px;
+  margin-bottom:50px;
+
+
+}
+
+/*removed*/
+.illustration_image{
+    width:160px;
+    height:100
+    border-radius:2px;
+}
+
+.site_name{
+    font-size:15px;
+    color:purple;
+}
+
+/*Programming Literacy*/
+.site_brand{
+    color:skyblue;
+    font-size:80px;
+    margin-left:280px;
+    margin-right:50px;
+
+
+}
+
+.site_slogan{
+    margin-left:340px;
+    color:#fc03ec;
+    text-decoration:underline;
+
+}
+
+#sidebar:hover{
+   background-color:#33cccc;
+   color:
+
+}
+..description:hover{
+    background-color:#33cccc;
+    color:
+}
