@@ -14,7 +14,7 @@ DEBUG = False
 
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'programmingliteracy.herokuapp.com', 'yabrecoding.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.programmingliteracy.herokuapp.com', 'yabrecoding.herokuapp.com']
 
 # Application definition
 
@@ -141,23 +141,24 @@ AWS_DEFAULT_ACL = None
 AWS_IS_GZIPPED = True
 
 # telling django to look for the static files in a directory called "static"
-AWS_LOCATION = 'static'
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#AWS_LOCATION = 'static'
+#STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# STATIC_ROOT = STATIC_URL
+STATIC_ROOT = STATIC_URL
 
 
 # uploaded media goes here
-#MEDIA_URL = '/media/'
+#
+MEDIA_URL = '/media/'
 # MEDIA_ROOT = MEDIA_URL
-MEDIA_LOCATION = '/static/media'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/static/media')
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+#MEDIA_LOCATION = '/static/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_OBJECT_PARAMETERS = {
