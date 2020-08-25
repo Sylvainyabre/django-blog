@@ -15,7 +15,7 @@ DEBUG = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE=True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.programmingliteracy.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.programmingliteracy.herokuapp.com','yabrecoding.herokuapp.com']
 
 # Application definition
 
@@ -37,13 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',
+
 ]
 AUTH_USER_MODEL = 'registration.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -145,24 +144,18 @@ AWS_DEFAULT_ACL = None
 AWS_IS_GZIPPED = True
 
 # telling django to look for the static files in a directory called "static"
-# AWS_LOCATION = 'static'
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATIC_ROOT = STATIC_URL
+STATIC_ROOT= [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 # uploaded media goes here
-#
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = MEDIA_URL
-# MEDIA_LOCATION = '/static/media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',

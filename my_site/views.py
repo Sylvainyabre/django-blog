@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 from django.utils.text import slugify
 from .forms import SearchForm
 from .models import Article, Comment, About
@@ -48,7 +49,7 @@ def create_article(request):
                                       ' Thank you for your contribution.'.format(new_article.author,
                                                                                  new_article.title))
             new_article.save()
-            return redirect('home')
+            return redirect(reverse('home'))
     else:
         article_form = ArticleForm()
     return render(request, template_name, {'article_form': article_form, 'new_article': new_article})
@@ -78,7 +79,7 @@ def add_comment(request, pk):
             # assign the current article to the comment
             new_comment.save()
             # now save it to the database
-            return redirect('home')
+            return redirect(reverse('home'))
 
     else:
         comment_form = CommentForm()
@@ -103,7 +104,7 @@ def add_reply(request, pk):
             new_reply.comment = comment
             new_reply.author = request.user
             new_reply.save()
-            return redirect('home')
+            return redirect(reverse('home'))
     else:
         reply_form = CommentReplyForm()
 
