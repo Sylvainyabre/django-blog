@@ -145,20 +145,20 @@ AWS_IS_GZIPPED = True
 
 
 STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+#DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 # telling django to look for the static files in a directory called "static"
 
 STATIC_URL = '/static/'
 
 STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 MEDIA_URL = '/media/'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
@@ -185,3 +185,9 @@ CKEDITOR_CONFIGS = {
 }
 
 django_heroku.settings(locals(), staticfiles=False)
+
+LOGGING = { 'version': 1, 'disable_existing_loggers': False,
+            'handlers': { 'file': { 'level': 'DEBUG',
+                                    'class': 'logging.FileHandler', 'filename': '/tmp/debug.log', },
+                          }, 'loggers': { 'django': { 'handlers': ['file'],
+                                                      'level': 'DEBUG', 'propagate': True, }, }, }
