@@ -15,7 +15,7 @@ DEBUG = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE=True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.programmingliteracy.herokuapp.com','yabrecoding.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'sypartage.herokuapp.com','yabrecoding.herokuapp.com']
 
 # Application definition
 
