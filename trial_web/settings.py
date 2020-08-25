@@ -186,8 +186,8 @@ CKEDITOR_CONFIGS = {
 
 django_heroku.settings(locals(), staticfiles=False)
 
-LOGGING = { 'version': 1, 'disable_existing_loggers': False,
+'''LOGGING = { 'version': 1, 'disable_existing_loggers': False,
             'handlers': { 'file': { 'level': 'DEBUG',
                                     'class': 'logging.FileHandler', 'filename': '/tmp/debug.log', },
                           }, 'loggers': { 'django': { 'handlers': ['file'],
-                                                      'level': 'DEBUG', 'propagate': True, }, }, }
+                                                      'level': 'DEBUG', 'propagate': True, }, }, }'''
