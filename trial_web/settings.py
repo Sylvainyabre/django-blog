@@ -13,9 +13,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE=True
+SESSION_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'sypartage.herokuapp.com','yabrecoding.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'sypartage.herokuapp.com', 'yabrecoding.herokuapp.com']
 
 # Application definition
 
@@ -143,22 +143,26 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_IS_GZIPPED = True
 
+
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 # telling django to look for the static files in a directory called "static"
 
-STATIC_URL = '/trial_web/static/'
+STATIC_URL = '/static/'
 
-STATIC_ROOT= [os.path.join(BASE_DIR, 'static')]
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
+STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000', }
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'home'
