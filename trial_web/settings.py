@@ -127,7 +127,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'  # this is exactly the value 'apikey'
+EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -145,16 +145,15 @@ AWS_IS_GZIPPED = True
 
 # telling django to look for the static files in a directory called "static"
 
-STATIC_URL = '/static/'
+STATIC_URL = '/trial_web/static/'
+
 STATIC_ROOT= [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
-# uploaded media goes here
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_S3_OBJECT_PARAMETERS = {
@@ -182,4 +181,3 @@ CKEDITOR_CONFIGS = {
 }
 
 django_heroku.settings(locals(), staticfiles=False)
-# staticfiles=False
