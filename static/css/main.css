@@ -405,9 +405,8 @@ main.container-fluid{
      margin-top:0px;
      min-height:100%;
      margin-bottom:100px;
-     float:left;
      margin-left:25px;
-     width:100%;
+     max-width:100%;
 
 }
 
@@ -429,24 +428,17 @@ main.container-fluid{
     margin-top:20px;
     margin-bottom:5px;
     display:block;
-    width:100%;
-
+    max-width:100%;
 }
-
-
-
-
 
 /*each article displayed on welcome page*/
 .unit-article{
-     width:500px;
+     width:450px;
      height:700px;
      display:auto;
      margin-bottom:5px;
      margin-top:10px;
      margin-left:6px;
-
-
 }
 
 /*refers to articles details page-->*/
@@ -457,9 +449,8 @@ div.post{
     margin-left:60px;
     padding:1px 15px;
     overflow-y:hidden;
-
     font-size:22px;
-    width:90%;
+    max-width:90%;
     float:center;
 }
 
@@ -489,7 +480,7 @@ hr.separate_comment{
 span.header_span{
      margin-left:50px;
      margin-right:50px;
-     padding:20px,0px;
+     padding:20px 0px;
 }
 
 div.email{
@@ -550,6 +541,7 @@ div.content-section{
     background-color:lightgrey;
     padding:15px 10px;
 }
+
 .article-img {
   width:70px;
   height:70px;
@@ -593,7 +585,7 @@ div.content-section{
     margin-top:0px;
     padding:10px 10px;
     border: 2px skyblue solid;
-    max-width:28%;
+    max-width:30%;
     display:block;
     overflow:auto;
    }
@@ -610,6 +602,8 @@ div.content-section{
   border: 5px purple ridge;
   margin-top:25px;
   margin-bottom:50px;
+  max-width:90%;
+  margin-left:15px;
 
 
 }
@@ -626,21 +620,22 @@ div.content-section{
     color:purple;
 }
 
+
 /*Programming Literacy*/
 .site_brand{
-          color:skyblue;
-         font-size:40px;
-         margin-left:180px;
-        margin-right:80px;
-        }
+       color:skyblue;
+       font-size:40px;
+       margin-left:180px;
+       margin-right:80px;
+ }
 
 
 #sidebar:hover{
    background-color:#33cccc;
-   color:
+
 
 }
-..description:hover{
+.description:hover{
     background-color:#33cccc;
     color:
 }

@@ -19,7 +19,8 @@ class CustomUser(AbstractUser):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                                related_name='profile', null=True, blank=True)
     image = models.ImageField(default='default.png', upload_to='media/')
     profession = models.CharField(max_length=100, blank=True)
     interest = models.CharField(max_length=200, blank=True)

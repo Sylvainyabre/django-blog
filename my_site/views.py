@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from .forms import SearchForm
 from .models import Article, Comment, About
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator
 from .forms import CommentForm, CommentReplyForm, ArticleForm
 from django.contrib.postgres.search import SearchVector, SearchQuery,SearchRank
 
@@ -55,14 +55,15 @@ def create_article(request):
     return render(request, template_name, {'article_form': article_form, 'new_article': new_article})
 
 
-@login_required
 def article_detail(request, slug, pk):
     template_name = 'my_site/article_detail.html'
     article = get_object_or_404(Article, status='published', slug=slug, pk=pk)
     return render(request, template_name,
+
                   {'article': article})
 
 
+@login_required
 def add_comment(request, pk):
     template_name = 'my_site/comment.html'
     article = get_object_or_404(Article, pk=pk)
@@ -89,6 +90,7 @@ def add_comment(request, pk):
                    'comment_form': comment_form})
 
 
+@login_required
 def add_reply(request, pk):
     template_name = 'my_site/reply_to_comments.html'
     comment = get_object_or_404(Comment, pk=pk)

@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
+
 from .forms import CustomUserForm
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
@@ -61,7 +63,7 @@ def profile_update(request):
             prof_update_form.save()
             user_update_form.save()
             messages.success(request,'Your account has been updates successfully')
-            return redirect('profile')
+            return redirect(reverse('profile'))
     else:
         prof_update_form = ProfileUpdateForm(instance=request.user.profile)
         user_update_form = UserUpdateForm(instance=request.user)
