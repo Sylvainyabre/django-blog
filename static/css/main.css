@@ -422,8 +422,8 @@ main.container-fluid{
    margin-right:150px;
    float:center;
 }
-@media screen and (max-width: 1200px){
-    #all_posts{
+
+#all_posts{
     background-color:#eee;
     padding:5px 5px;
     margin-top:20px;
@@ -433,21 +433,7 @@ main.container-fluid{
 
 }
 
-}
 
-
-@media screen and (min-width: 1200px){
-    #all_posts{
-    background-color:#eee;
-    padding:5px 5px;
-    margin-top:20px;
-    margin-bottom:5px;
-    display:block;
-    width:70%;
-
-}
-
-}
 
 
 
