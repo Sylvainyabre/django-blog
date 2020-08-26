@@ -580,7 +580,7 @@ div.content-section{
 
 }
 
-@media screen and (min-width: 1200px){
+/*@media screen and (min-width: 1200px){
 #sidebar{
       float:right;
       background-color:white;
@@ -595,23 +595,22 @@ div.content-section{
       height:auto;
 }
 
-}
+}*/
 
 
-@media screen and (min-width: 1200px){
+
 #sidebar{
-             float:right;
-             background-color:white;
-             margin-top:0px;
-             margin-right:15px !important;
-             margin-top:0px;
-             padding:10px 10px;
-             border: 2px skyblue solid;
-             max-width:18%;
-             display:block;
-             overflow:auto;
-           }
-}
+    float:right;
+    background-color:white;
+    margin-top:0px;
+    margin-right:15px !important;
+    margin-top:0px;
+    padding:10px 10px;
+    border: 2px skyblue solid;
+    max-width:28%;
+    display:block;
+    overflow:auto;
+   }
 
 
 .pagination{
@@ -637,12 +636,11 @@ div.content-section{
 }
 
 .site_name{
-    font-size:15px;
+    font-size:13px;
     color:purple;
 }
 
 /*Programming Literacy*/
-@media screen and (max-width: 1200px){
 .site_brand{
           color:skyblue;
          font-size:40px;
@@ -650,26 +648,6 @@ div.content-section{
         margin-right:80px;
         }
 
-}
-
-
-media screen and (min-width: 1200px){
-.site_brand{
-          color:skyblue;
-         font-size:40px;
-         margin-left:180px;
-          margin-right:80px;
-        }
-}
-
-
-
-.site_slogan{
-    margin-left:340px;
-    color:#fc03ec;
-    text-decoration:underline;
-
-}
 
 #sidebar:hover{
    background-color:#33cccc;
@@ -683,15 +661,7 @@ media screen and (min-width: 1200px){
 
 
 .whole-site{
-          max-width:100%;
+    max-width:100%;
 
     }
 
-
-
-@media screen and (min-width: 1200px){
-     .whole-site{
-          max-width:70%;
-
-    }
-}
