@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1 class="site_brand">Programming Literacy</h1>
-<h3 class="text-muted site_slogan"><i>Apprendre ensemble la programmation informatique</i></h3>
+
 <div class="row"  id="all_posts">
 
      {% load my_site_tags %}
@@ -15,11 +15,11 @@
             <div class="site_name"><h3 >Programming Literacy</h3></div>
              <hr>
              <h5 class="text-muted"> {% total_articles %} Articles.</h5>
-             <p><a href="{% url 'articles_feed' %}">Souscrire au fil des articles.</a></p>
-            <h4>Les Plus Récents</h4>
+            <!-- <p><a href="{% url 'articles_feed' %}">Souscrire au fil des articles.</a></p> -->
+            <h4>Récents Articles</h4>
             <p>{% show_latest_articles 5%}</p>
 
-            <h4>Les Plus Commentés</h4>
+            <h4>Plus Commentés</h4>
             {% get_most_commented_articles as most_commented_articles %}
             <ul>
                 {% for article in most_commented_articles %}

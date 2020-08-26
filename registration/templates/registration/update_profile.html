@@ -12,7 +12,6 @@
            <fieldset class="form-group">
                <legend class="border-bottom mb-4">Profile Info</legend>
                {% csrf_token %}
-               <!--{{ user_update_form | crispy }}-->
                {{prof_update_form|crispy}}
            </fieldset>
     <p><input type="submit" value="update"></p>

@@ -12,7 +12,4 @@ urlpatterns = [
     path('feed/', LatestArticlesFeed(), name='articles_feed'),
     path('search/',site_views.article_search, name='search'),
     path('about/me/', site_views.about, name = 'about'),
-
-
-
 ]

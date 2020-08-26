@@ -31,7 +31,7 @@
 <!-- creating the natigation bar-->
 
 
-<header>
+<header class="header">
     <div class="w3-top" id="top">
 
         <div class="w3-bar">
@@ -66,7 +66,7 @@
 
 </header>
 
- <main role="main" class="container-fluid">
+ <main role="main" class="container-fluid whole-site">
     {% if messages %}
     {% for message in messages %}
     <div class="alert-success alert-{{message.tags}}"><h3>{{message}}</h3></div>
@@ -99,6 +99,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js" integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ==" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

@@ -90,14 +90,29 @@ main.container-fluid{
    margin-right:150px;
    float:center;
 }
+@media screen and (max-width: 1200px){
+        #all_posts{
+            background-color:#eee;
+            padding:5px 5px;
+            margin-top:20px;
+            margin-bottom:10px;
+            display:block;
+            width:100%;
 
-#all_posts{
-    background-color:#eee;
-    padding:5px 5px;
-    margin-top:20px;
-    margin-bottom:10px;
-    display:block;
+           }
+}
 
+
+@media screen and (min-width: 1200px){
+        #all_posts{
+            background-color:#eee;
+            padding:5px 5px;
+            margin-top:20px;
+            margin-bottom:10px;
+            display:block;
+            width:65%;
+
+           }
 }
 
 
@@ -219,7 +234,7 @@ div.content-section{
   height:70px;
 }
 .user-bio{
-  border: 2px green rounded;
+  border:2px green rounded;
   color:skyblue;
   margin-left:20px;
 }
@@ -230,20 +245,38 @@ div.content-section{
 
 }
 
-#sidebar{
-   float:right;
-   background-color:white;
-   margin-top:0px;
-   margin-right:15px !important;
-   margin-top:0px;
-   padding:10px 10px;
-   border: 2px skyblue solid;
-   width:27%;
-   display:block;
+@media screen and (max-width: 1200px){
+      #sidebar{
+          float:right;
+          background-color:white;
+          margin-top:0px;
+          margin-right:15px !important;
+          margin-top:0px;
+          padding:10px 10px;
+          border: 2px skyblue solid;
+          width:27%;
+          display:block;
 
-
+          }
 
 }
+
+@media screen and (min-width: 1200px){
+      #sidebar{
+          float:right;
+          background-color:white;
+          margin-top:0px;
+          margin-right:15px !important;
+          margin-top:0px;
+          padding:10px 10px;
+          border: 2px skyblue solid;
+          width:20%;
+          display:block;
+
+          }
+
+}
+
 
 .pagination{
 
@@ -389,15 +422,33 @@ main.container-fluid{
    margin-right:150px;
    float:center;
 }
-
-#all_posts{
+@media screen and (max-width: 1200px){
+    #all_posts{
     background-color:#eee;
     padding:5px 5px;
     margin-top:20px;
     margin-bottom:5px;
     display:block;
+    width:100%;
 
 }
+
+}
+
+
+@media screen and (min-width: 1200px){
+    #all_posts{
+    background-color:#eee;
+    padding:5px 5px;
+    margin-top:20px;
+    margin-bottom:5px;
+    display:block;
+    width:70%;
+
+}
+
+}
+
 
 
 /*each article displayed on welcome page*/
@@ -529,20 +580,39 @@ div.content-section{
 
 }
 
+@media screen and (min-width: 1200px){
 #sidebar{
-   float:right;
-   background-color:white;
-   margin-top:0px;
-   margin-right:15px !important;
-   margin-top:0px;
-   padding:10px 10px;
-   border: 2px skyblue solid;
-   width:27%;
-   display:block;
-
-
+      float:right;
+      background-color:white;
+      margin-top:0px;
+      margin-right:15px !important;
+      margin-top:0px;
+      padding:10px 10px;
+      border: 2px skyblue solid;
+      max-width:27%;
+      display:block;
+      overflow:auto;
+      height:auto;
+}
 
 }
+
+
+@media screen and (min-width: 1200px){
+#sidebar{
+             float:right;
+             background-color:white;
+             margin-top:0px;
+             margin-right:15px !important;
+             margin-top:0px;
+             padding:10px 10px;
+             border: 2px skyblue solid;
+             max-width:18%;
+             display:block;
+             overflow:auto;
+           }
+}
+
 
 .pagination{
 
@@ -572,14 +642,27 @@ div.content-section{
 }
 
 /*Programming Literacy*/
+@media screen and (max-width: 1200px){
 .site_brand{
-    color:skyblue;
-    font-size:80px;
-    margin-left:280px;
-    margin-right:50px;
-
+          color:skyblue;
+         font-size:40px;
+         margin-left:180px;
+        margin-right:80px;
+        }
 
 }
+
+
+media screen and (min-width: 1200px){
+.site_brand{
+          color:skyblue;
+         font-size:40px;
+         margin-left:180px;
+          margin-right:80px;
+        }
+}
+
+
 
 .site_slogan{
     margin-left:340px;
@@ -596,4 +679,19 @@ div.content-section{
 ..description:hover{
     background-color:#33cccc;
     color:
+}
+
+
+.whole-site{
+          max-width:100%;
+
+    }
+
+
+
+@media screen and (min-width: 1200px){
+     .whole-site{
+          max-width:70%;
+
+    }
 }

@@ -12,8 +12,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'sypartage.herokuapp.com', 'yabrecoding.herokuapp.com']
 
@@ -144,15 +142,7 @@ AWS_DEFAULT_ACL = None
 AWS_IS_GZIPPED = True
 
 
-STATICFILES_LOCATION = 'static'
-#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-
-MEDIAFILES_LOCATION = 'media'
-#DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-# telling django to look for the static files in a directory called "static"
-
 STATIC_URL = '/static/'
-
 STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
@@ -170,8 +160,13 @@ LOGIN_URL = 'login'
 # ...
 SITE_ID = 1
 
-CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+CSRF_COOKIE_DOMAIN = 'sypartage.herokuapp.com'
+CSRF_TRUSTED_ORIGINS= ['sypartage.herokuapp.com']
 
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
 
@@ -190,4 +185,7 @@ django_heroku.settings(locals(), staticfiles=False)
             'handlers': { 'file': { 'level': 'DEBUG',
                                     'class': 'logging.FileHandler', 'filename': '/tmp/debug.log', },
                           }, 'loggers': { 'django': { 'handlers': ['file'],
-                                                      'level': 'DEBUG', 'propagate': True, }, }, }'''
+   
+   
+   
+                                                   'level': 'DEBUG', 'propagate': True, }, }, }'''
