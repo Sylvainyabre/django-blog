@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 
 from .forms import CustomUserForm
 from django.contrib import messages, auth
@@ -8,6 +9,7 @@ from .forms import UserUpdateForm, ProfileUpdateForm
 from django.contrib.postgres.search import SearchVector
 
 
+@csrf_exempt
 def register(request):
     template_name = 'registration/register.html'
     if request.method == 'POST':
@@ -22,6 +24,7 @@ def register(request):
     return render(request, template_name, {'user_form': user_form})
 
 
+@csrf_exempt
 def user_login(request):
     template_name = 'registration/login.html'
     if request.user.is_authenticated():
@@ -46,12 +49,14 @@ def logout(request):
     return render(request, template_name)
 
 
+@csrf_exempt
 @login_required()
 def profile(request):
     template_name = 'registration/profile.html'
     return render(request, template_name)
 
 
+@csrf_exempt
 @login_required()
 def profile_update(request):
     template_name = 'registration/update_profile.html'

@@ -4,6 +4,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.utils.text import slugify
+from django.views.decorators.csrf import csrf_exempt
+
 from .forms import SearchForm
 from .models import Article, Comment, About
 from django.core.paginator import Paginator
@@ -31,6 +33,7 @@ def about(request):
     return render(request, template_name, context=context )
 
 
+@csrf_exempt
 @staff_member_required
 def create_article(request):
     template_name = 'my_site/article_creation.html'
@@ -63,6 +66,7 @@ def article_detail(request, slug, pk):
                   {'article': article})
 
 
+@csrf_exempt
 @login_required
 def add_comment(request, pk):
     template_name = 'my_site/comment.html'
@@ -90,6 +94,7 @@ def add_comment(request, pk):
                    'comment_form': comment_form})
 
 
+@csrf_exempt
 @login_required
 def add_reply(request, pk):
     template_name = 'my_site/reply_to_comments.html'

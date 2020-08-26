@@ -73,7 +73,6 @@ main.container-fluid{
      margin-top:0px;
      min-height:100%;
      margin-bottom:100px;
-     float:left;
      margin-left:25px;
      width:100%;
 
@@ -90,30 +89,18 @@ main.container-fluid{
    margin-right:150px;
    float:center;
 }
-@media screen and (max-width: 1200px){
-        #all_posts{
-            background-color:#eee;
-            padding:5px 5px;
-            margin-top:20px;
-            margin-bottom:10px;
-            display:block;
-            width:100%;
 
-           }
+#all_posts{
+     background-color:#eee;
+     padding:5px 5px;
+     margin-top:20px;
+     margin-bottom:10px;
+     display:block;
+      max-width:100%;
+
 }
 
 
-@media screen and (min-width: 1200px){
-        #all_posts{
-            background-color:#eee;
-            padding:5px 5px;
-            margin-top:20px;
-            margin-bottom:10px;
-            display:block;
-            width:65%;
-
-           }
-}
 
 
 /*each article displayed on welcome page*/
@@ -245,7 +232,7 @@ div.content-section{
 
 }
 
-@media screen and (max-width: 1200px){
+/*@media screen and (max-width: 1200px){
       #sidebar{
           float:right;
           background-color:white;
@@ -275,7 +262,7 @@ div.content-section{
 
           }
 
-}
+}*/
 
 
 .pagination{
@@ -405,7 +392,6 @@ main.container-fluid{
      margin-top:0px;
      min-height:100%;
      margin-bottom:100px;
-     margin-left:25px;
      max-width:100%;
 
 }
@@ -422,6 +408,7 @@ main.container-fluid{
    float:center;
 }
 
+/*all the articles layed out on welcome page*/
 #all_posts{
     background-color:#eee;
     padding:5px 5px;
@@ -429,16 +416,18 @@ main.container-fluid{
     margin-bottom:5px;
     display:block;
     max-width:100%;
+    max-height:100%;
 }
 
 /*each article displayed on welcome page*/
 .unit-article{
-     width:450px;
+     width:465px;
      height:700px;
      display:auto;
      margin-bottom:5px;
      margin-top:10px;
      margin-left:6px;
+
 }
 
 /*refers to articles details page-->*/
@@ -524,7 +513,7 @@ div.reply_area{
 div.content-section{
 
      background-color:lightblue;
-     padding:20px 10px;
+     padding:10px 10px;
      margin-top:25px;
      margin-bottom:10px;
 }
@@ -558,24 +547,6 @@ div.content-section{
 
 }
 
-/*@media screen and (min-width: 1200px){
-#sidebar{
-      float:right;
-      background-color:white;
-      margin-top:0px;
-      margin-right:15px !important;
-      margin-top:0px;
-      padding:10px 10px;
-      border: 2px skyblue solid;
-      max-width:27%;
-      display:block;
-      overflow:auto;
-      height:auto;
-}
-
-}*/
-
-
 
 #sidebar{
     float:right;
@@ -585,7 +556,8 @@ div.content-section{
     margin-top:0px;
     padding:10px 10px;
     border: 2px skyblue solid;
-    max-width:30%;
+    max-width:35%;
+    height:auto;
     display:block;
     overflow:auto;
    }
@@ -620,7 +592,6 @@ div.content-section{
     color:purple;
 }
 
-
 /*Programming Literacy*/
 .site_brand{
        color:skyblue;
@@ -635,6 +606,7 @@ div.content-section{
 
 
 }
+
 .description:hover{
     background-color:#33cccc;
     color:
@@ -644,5 +616,5 @@ div.content-section{
 .whole-site{
     max-width:100%;
 
-    }
+}
 
