@@ -34,7 +34,7 @@
                        <li >
                           <article>
                               {% load avatar_tags %}
-                              <img class="rounded-circle article-img" src="{{article.author.profile.image.url}}">
+                              <img class="rounded-circle article-img" src="{{comment.author.profile.image.url}}">
                               <strong  style="color:#009933;"><a  href=" {% url 'profile' %}">{{comment.author.first_name}}</a></strong>
                               <small class="text-muted" style="color:#009933;">on {{comment.created}}</small>
 
@@ -46,7 +46,7 @@
                                            <ul class="reply_li">
                                                <li >
                                                  <div class="reply_area">
-                                                    <img class="rounded-circle article-img" src="{{article.author.profile.image.url}}">
+                                                    <img class="rounded-circle article-img" src="{{reply.author.profile.image.url}}">
                                                      <strong class="text-muted" style="color:purple;" ><a href=" {% url 'profile' %}">{{reply.author.first_name|safe}}</a></strong>
                                                     <small class="text-muted">{{reply.created}}</small>
                                                      <p class="muted-text">{{reply.body|safe}}</p>
