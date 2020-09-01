@@ -578,7 +578,7 @@ div.post{
     margin-right:4px;
     overflow:auto;
     font-size:12px;
-    width:100%;
+    width:93%;
     float:center;
 }
 .unit-article{
@@ -588,6 +588,7 @@ div.post{
      margin-bottom:5px;
      margin-top:10px;
      margin-left:6px;
+     margin-right:6px;
 
 }
 about_page{
@@ -601,6 +602,15 @@ about_page{
 
 
      }
+  #top {
+  background-color:#009999;
+  overflow-y:hidden;
+  position:relative;
+  width:100%;
+  margin-top:0px;
+  padding:22px,0px;
+  display:flex;
+}
 }
 
 
