@@ -6,7 +6,7 @@ login
 {% block content %}
 <div class="content-section">
     {% load crispy_forms_tags %}
-    <form class = "login-form"  method="POST" action=".">
+    <form class = "login-form"  method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form | crispy }}
         <input type="submit" value="sign in">
