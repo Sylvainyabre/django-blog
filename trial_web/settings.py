@@ -14,12 +14,17 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = ['127.0.0.1', 'sypartage.herokuapp.com', 'yabrecoding.herokuapp.com']
+CORS_ALLOWED_ORIGINS = [
+"https://sylvain-portfolio.netlify.app",
+'127.0.0.1', 'sypartage.herokuapp.com', 'yabrecoding.herokuapp.com'
+]
 
 # Application definition
 
 INSTALLED_APPS = [
     'my_site.apps.MySiteConfig',
     'registration.apps.RegistrationConfig',
+     'rest_framework',
     'avatar',
     'ckeditor',
     'ckeditor_uploader',
@@ -35,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 
 ]
 AUTH_USER_MODEL = 'registration.CustomUser'
@@ -42,12 +48,15 @@ AUTH_USER_MODEL = 'registration.CustomUser'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'trial_web.urls'

@@ -16,6 +16,7 @@ Django==3.0.8
 django-appconf==1.0.4
 django-avatar==5.0.0
 django-ckeditor==5.9.0
+django-cors-headers==3.8.0
 django-crispy-forms==1.9.1
 django-environ==0.4.5
 django-environment==0.3.8
