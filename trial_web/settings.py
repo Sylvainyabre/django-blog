@@ -16,6 +16,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', 'sypartage.herokuapp.com', 'yabrecoding.herokuapp.com']
 CORS_ALLOWED_ORIGINS = [
 "https://sylvain-portfolio.netlify.app",
+    'http://localhost:3000',
 '127.0.0.1', 'sypartage.herokuapp.com', 'yabrecoding.herokuapp.com'
 ]
 
